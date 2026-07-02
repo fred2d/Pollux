@@ -1,5 +1,5 @@
 # Pollux
-Firmware for controlling the low-level hardware of the UAntwerp Solar Boat.
+Firmware for controlling the low-level hardware of a autonomous boat
 
 ## Overview
 Pollux manages motor and steering PWM output, RC receiver input (SBUS), physical switch inputs, and serial communication with the main control system. The firmware supports multiple operation modes (Manual, RC, Autonomous) with automatic failsafe protection.
