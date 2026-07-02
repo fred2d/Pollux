@@ -8,7 +8,7 @@ Pollux manages motor and steering PWM output, RC receiver input (SBUS), physical
 
 | Component | Pin | Direction | Notes |
 |-----------|-----|-----------|-------|
-| **SBUS Receiver** | 7 | Input | UART RX (cannot be changed) |
+| **SBUS Receiver** | 7 | Input | UART RX (can not be changed) |
 | **PWM Input** | 2 | Input | From manual controller or PWM source |
 | **PWM Motor Output** | 3 | Output | 400 Hz, 800-2350 µs |
 | **PWM Steering Output** | 5 | Output | 50 Hz, 800-2200 µs, could be 400 Hz in reality |
