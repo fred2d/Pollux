@@ -44,7 +44,7 @@ void InitSwitches(void) {
     // Initialize switch pins as inputs
     pinMode(ERROR_PIN, INPUT);
     pinMode(STATUS_PIN, INPUT);
-    pinMode(START_PIN, INPUT);
+    pinMode(START_PIN, INPUT_PULLDOWN);
     pinMode(AMS_PIN, INPUT_PULLDOWN);
     pinMode(NO_RC_PIN, INPUT_PULLDOWN);
 }
