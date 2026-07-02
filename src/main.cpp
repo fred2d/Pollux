@@ -36,7 +36,7 @@ static bool rc_failsafe = false;
 static bool serial_failsafe = false;
 static bool pwm_in_failsafe = false;
 
-static bool estop_triggered = false;  // Track if emergency stop has been triggered
+static bool rc_estop_triggered = false;  // Track if emergency stop has been triggered
 /**
  * Helper function to compare TransmitData structs
  */
@@ -138,10 +138,10 @@ void Run(void) {
 
   if (RcIsFailsafe()) rc_failsafe = true;
 
-  if (!stateData.no_rc && (RcGetEstop() || estop_triggered)) {
+  if (!stateData.no_rc && (RcGetEstop() || rc_estop_triggered)) {
     mode = FAILSAFE;
     stateData.failsafe = E_STOP_FAILSAFE;
-    estop_triggered = true;
+    rc_estop_triggered = true;
   } else if (!stateData.no_rc && rc_failsafe) {
     mode = FAILSAFE;
     stateData.failsafe = RC_FAILSAFE;
@@ -155,8 +155,8 @@ void Run(void) {
     stateData.failsafe = NO_FAILSAFE;
   }
 
-  if (estop_triggered && stateData.no_rc) {
-    estop_triggered = false;  // Reset emergency stop when in manual mode
+  if (rc_estop_triggered && stateData.no_rc) {
+    rc_estop_triggered = false;  // Reset emergency stop when in manual mode
   }
   // Execute actions based on the current mode
   switch (mode) {
